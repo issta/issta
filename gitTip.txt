@@ -14,3 +14,10 @@ git log
 git add isstatest.txt
 
 git commit -m "Add Issta's first file to github by git"
+
+ssh-add id_rsa
+
+ssh-agent bash
+
+cat /c/users/hip4082/.ssh/issta_id_rsa.pub | clip
+
