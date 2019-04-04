@@ -1,0 +1,16 @@
+git clone git@github.com:issta/issta.git
+
+ssh -T git@github.com
+
+cat ~/.ssh/id_rsa.pub
+
+
+ssh-keygen -t rsa -C "your_email@example.com"
+
+git status
+
+git log
+
+git add isstatest.txt
+
+git commit -m "Add Issta's first file to github by git"
