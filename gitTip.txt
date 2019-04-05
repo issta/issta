@@ -173,6 +173,15 @@ https://github.com/issta/issta
 
 
 -----------------------------------------------------------
+推荐超级好的学习资料和网站：
+https://git-scm.com/book/en/v2
+https://git-scm.com/book/zh/v2
+
+https://github.com/schacon
+http://pcottle.github.io/learnGitBranching/
+http://try.github.io/
+
+-----------------------------------------------------------
 /*
 ┌─┬─┬─┬─┐
 │a│b│c│d│
