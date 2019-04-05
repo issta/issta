@@ -1,23 +1,58 @@
+﻿clone以有仓库
 git clone git@github.com:issta/issta.git
 
+-----------------------------------------------------------
+测试ssh连接
 ssh -T git@github.com
 
+$ ssh -T git@github.com
+git@github.com: Permission denied (publickey).
+
+这种情况一般是因为生成秘钥文件时对文件进行了重命名，然而你自定义的这个名字并没有和ssh内部规定的名字保持一致，所以使用ssh -T git@github.com报错Permission denied (publickey).。解决方法如下：
+先执行：ssh-agent bash  （一定要先执行这一步！）
+再执行：ssh-add ~/.ssh/xxx  （xxx为你想要用的文件名）
+
+////////////////////////////////
+$ ssh-agent bash
+
+$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /c/Users/hip4082/.ssh/id_rsa:
+
+$ ssh -T git@github.com
+Hi issta/issta! You've successfully authenticated, but GitHub does not provide shell access.
+
+----------------------------------------------------------
+
+
+id_rsa文件是私有密钥  id_rsa.pub是公开密钥
+
+查看公开密钥
 cat ~/.ssh/id_rsa.pub
 
+创建SSH Key
+ssh-keygen -t rsa -C "issta0309@outlook.com"
 
-ssh-keygen -t rsa -C "your_email@example.com"
 
+显示Git仓库的状态
 git status
 
+查看提交日志
 git log
 
+向暂存区中添加文件
 git add isstatest.txt
 
+保存仓库的历史记录, -m 参数后的"..."称作提交信息，是对这个提交的概述
 git commit -m "Add Issta's first file to github by git"
+
 
 ssh-add id_rsa
 
+解决访问被拒绝的办法
 ssh-agent bash
 
+符指公钥
 cat /c/users/hip4082/.ssh/issta_id_rsa.pub | clip
 
+clone 已有仓库
+git clone git@github.com:issta/issta.git
