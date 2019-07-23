@@ -166,6 +166,37 @@ $ git clone git@github.com:github-book/git-tutorial.git
 
 -----------------------------------------------------------
 -----------------------------------------------------------
+
+master分支推送到develop_BJ分支
+
+ (master)分支打包
+$ git format-patch -p1
+0001-Fu-bugid-De-LDW.patch
+
+(master)切换分支
+$ git checkout develop_BJ
+Switched to branch 'develop_BJ'
+Your branch is up to date with 'origin/develop_BJ'.
+
+(develop_BJ)查看
+$ git am
+.git/                       0001-Fu-bugid-De-LDW.patch  include/                    src/
+
+(develop_BJ)提交
+$ git am 0001-Fu-bugid-De-LDW.patch
+.git/rebase-apply/patch:894: trailing whitespace.
+#include "rt_roundf_snf.h"
+warning: 1 line adds whitespace errors.
+Applying: Fu/bugid+De:优化LDW报警逻辑
+
+(develop_BJ)查看日志
+$ git log
+commit b94bd4169f30d2705a24322ec8f70ba091fafff0 (HEAD -> develop_BJ)
+
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
 在GitHub 中，很多页面都可以使用键盘快捷键:
 https://github.com/issta/issta
 
